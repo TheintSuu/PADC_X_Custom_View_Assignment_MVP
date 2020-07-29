@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="parallax"
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_baseline_arrow_black_back_ios_24" />
+
+        <TextView
+            android:id="@+id/tvDashboard"
+            android:layout_toEndOf="@id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="OMP Dashboard"/>
+        <Button
+            android:id="@+id/btnInProgress"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/btn_background"
+            android:gravity="center"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:textColor="#fff"
+            android:text="In progress"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp"
+        android:text="Create additional pages"/>
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#E6E4E4"
+        android:layout_marginStart="15dp"
+        android:text="03 days | Dec 18, 2019"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_padding"
+            tools:listitem="@layout/task_item_view"
+            />
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/taskProgressBar"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:outlineSpotShadowColor="@color/colorProgress"-->
+<!--            android:progress="85"-->
+<!--            android:progressDrawable="@drawable/progress_bar"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            />-->
+
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="32dp"
+        android:layout_marginTop="@dimen/normal_padding"
+        app:cardElevation="30dp"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3EFEF"
+        android:orientation="vertical"
+      >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large"
+                android:text="Tasks"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/tvShowInDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/margin_large"
+                android:text="Show in days"
+                android:textColor="#000" />
+
+
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_padding"
+            tools:listitem="@layout/task_item_view"
+            />
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
