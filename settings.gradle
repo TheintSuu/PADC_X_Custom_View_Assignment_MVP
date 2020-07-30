@@ -1,0 +1,2 @@
+rootProject.name='PADC_X_Custom_View_Assignment'
+include ':app'
